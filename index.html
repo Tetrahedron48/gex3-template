@@ -82,24 +82,25 @@
       font-family: 'Luna', cursive;
       font-size: 1.25rem;
       color: #f0c96a;
-      background-color: rgba(10, 20, 40, 0.4);
+      /* 移除多余背景色，只保留图片本身 */
+      background-color: transparent;
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
       border-bottom: 1px solid rgba(255, 255, 255, 0.45);
       box-shadow: none;
       padding: 0.7rem 1.25rem;
-      /* 高度再提高一个量级，保证背景图完整展示 */
+      /* 高度保持宽敞，确保图片完整展示 */
       min-height: clamp(72px, calc((100vh - 180px) / 5), 96px);
       display: flex;
       align-items: center;
       width: 100%;
-      transition: color 0.3s ease, background-color 0.3s ease;
+      transition: color 0.3s ease;
     }
 
     .accordion-shell .accordion-button:not(.collapsed) {
       color: #7ec8ff;
-      background-color: rgba(10, 20, 40, 0.4);
+      background-color: transparent;
       box-shadow: none;
     }
 
@@ -117,7 +118,7 @@
       border-color: rgba(255, 255, 255, 0.45);
     }
 
-    /* 每个手风琴按钮使用独立的背景图，contain 不裁剪 */
+    /* 只保留正确的五张独立背景图，每张图上方叠加半透明渐变以保证文字可读 */
     .acc-personal {
       background-image: linear-gradient(rgba(10,20,40,.38), rgba(10,20,40,.38)), url('assets/acc-bg1.jpg');
     }
